@@ -1,0 +1,40 @@
+<div class="flex flex-col">
+    <div class="overflow-x-auto">
+      <div class="inline-block py-2 min-w-full">
+        <div class="overflow-hidden shadow-md sm:rounded-lg">
+          <table class="min-w-full">
+            <thead class="bg-gray-50 dark:bg-gray-700">
+              <tr class="animate__animated animate__bounce animate__faster">
+                <th scope="col" class="thead">#</th>
+                <th scope="col" class="thead">Bandera</th>
+                <th scope="col" class="thead">Nombre</th>
+                <th scope="col" class="thead">Población</th>
+                <th scope="col" class="relative py-3 px-6">
+                  <span class="sr-only">Ver</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Product 1 -->
+              <tr
+                class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                *ngFor="let pais of paises; index as i;"
+              >
+                <td class="trowFrist">{{i+1}}</td>
+                <td class="trow">{{pais.flag}}
+                  <img [src]="pais.flags.svg" alt="country" class="h-12 w-14">
+                </td>
+                <td class="trow">{{pais.capital}} , {{pais.name.official}}</td>
+                <td class="trow">{{pais.population | number}}</td>
+                <td
+                  class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap"
+                >
+                  <a [routerLink]="['../pais',pais.cca2]" class="thlink">Ver</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>

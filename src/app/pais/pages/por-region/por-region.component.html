@@ -1,0 +1,26 @@
+<!-- <app-menu class="w-full h-screen" [title]='"Región"' (termCountry)="buscar($event)" [paises]="paises" [hayError]="hayError"></app-menu> -->
+<div class="w-full text-white p-4 animate__animated animate__fadeIn">
+  <h1 class="text-white py-5 rounded text-xl font-semibold">
+    Buscar por Región {{ regionActiva | titlecase }}
+  </h1>
+  <hr />
+  <h3 class="text-white py-5 rounded text-base font-semibold">
+    Selecione la región
+  </h3>
+  <div class="w-full flex gap-3 mb-3">
+    <!-- [class.btn-primary]="region===regionActiva" -->
+    <!-- [ngClass]="{
+        'bg-blue-800 border-blue-800': regionActiva === region,
+        'bg-gray-900 border-white': regionActiva !== region
+      }" -->
+    <button
+      *ngFor="let region of regiones"
+      [class]="getClaseCSS(region)"
+      (click)="activarRegion(region)"
+      class="bg-gray-900 border border-white py-2 px-3 rounded-lg hover:bg-blue-800 hover:border-blue-800 transition"
+    >
+      {{ region | titlecase }}
+    </button>
+</div>
+<app-pais-table [paises]="paises"></app-pais-table>
+</div>

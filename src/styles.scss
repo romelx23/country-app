@@ -1,1 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* You can add global styles to this file, and also import other style files */
+
+.thead{
+    @apply py-3 px-6 text-xl font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400
+}
+
+.trowFrist{
+    @apply py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white
+}
+
+.trow{
+    @apply py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400
+}
+
+.thlink{
+     @apply text-blue-600 dark:text-blue-500 hover:underline
+}
